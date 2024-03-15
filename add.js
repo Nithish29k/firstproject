@@ -34,36 +34,36 @@ var myArray = [
     {'name': 'Subash', 'age':'23', 'birthday': '20/04/2000'},
     {'name': 'Nithish', 'age':'19', 'birthday': '23/05/2001'},
     {'name': 'Bharathi', 'age':'20', 'birthday': '12/06/2006'},
-    {'name': 'karthi', 'age':'25', 'birthday': '12/06/1999'},
+    {'name': 'karthi ', 'age':'25', 'birthday': '12/06/1999'},
     
 ]
 
-    // $('th').on('click', function(){
-    //     var column = $(this).data('column')
-    //     var order = $(this).data('order')
-    //     var text = $(this).html()
-    //     text = text.substring(0, text.length - 1)
+$('th').on('click', function(){
+        var column = $(this).data('column')
+        var order = $(this).data('order')
+        var text = $(this).html()
+        text = text.substring(0, text.length - 1)
 
-    //     if(order == 'desc'){
-    //         $(this).data('order', "asc")
-    //         myArray = myArray.sort((a,b) => a[column] > b[column] ? 1 : -1)
-    //         text += '&#9660'
+        if(order == 'desc'){
+            $(this).data('order', "asc")
+            myArray = myArray.sort((a,b) => a[column] > b[column] ? 1 : -1)
+            text += '&#9660'
 
-    //     }else{
-    //         $(this).data('order', "desc")
-    //         myArray = myArray.sort((a,b) => a[column] < b[column] ? 1 : -1)
-    //         text += '&#9650'
+        }else{
+            $(this).data('order', "desc")
+            myArray = myArray.sort((a,b) => a[column] < b[column] ? 1 : -1)
+            text += '&#9650  '
                 
-    //     }
-    //     $(this).html(text)
-    //     buildTable(myArray)
-    //     })
+        }
+        $(this).html(text)
+        buildTable(myArray)
+        })
 
 buildTable(myArray)
 
 function buildTable(data){
     var table = document.getElementById('myTable')
-
+    table.innerHTML= ''
     for (var i = 0; i< data.length; i++){
         var row =`<tr>
                 <td>${data[i].name}</td>
